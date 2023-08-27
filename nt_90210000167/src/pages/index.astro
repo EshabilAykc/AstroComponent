@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import 'bootstrap/dist/css/bootstrap.min.css';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Eshabil Aykaç</h1>
+		<h1>ASTRO VE COMPONENTS</h1>
+		<h1>DENEM ÇALIŞMASI</h1>
+	</main>
+
+	<footer class="bg-dark text-white py-4 mt-auto">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3 class="mb-">İletişim Bilgileri</h3>
+					<p>Adres: Dörtyol/HATAY</p>
+					<p>Telefon: +90 (534) 933 01 97</p>
+					<p>E-posta: eshabilaykc@gmail.com</p>
+				</div>
+				<div class="col-md-4">
+					<h3 class="mb-3">Sosyal Medya</h3>
+					<p><a href="https://twitter.com">Twitter</a></p>
+					<p><a href="https://instagram.com">İnstagram</a></p>
+					<p><a href="https://youtube.com">YouTube</a></p>
+				</div>
+				<div class="col-md-4">
+					<h3 class="mb-3">Sponsorlar</h3>
+					<p><a href="https://www.yargiyayinevi.com/">Yayın Evleri</a></p>
+				</div>
+			</div>
+		</footer>
+	</Layout>
+
+	<style>
+		body {
+			background-image: linear-gradient(to bottom right,#4ecdc4, #556270);
+		}
+
+		main {
+			margin: 2rem auto;
+			padding: 1.5rem;
+			max-width: 60ch;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 3rem;
+			font-weight: 800;
+			margin: 0;
+			margin-top: 1rem;
+		}
+
+		.text-gradient {
+			background-image: var(--accent-gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-size: 400%;
+			background-position: 0%;
+		}
+
+		.instructions {
+			line-height: 1.6;
+			margin: 1rem 0;
+			border: 1px solid rgba(var(--accent), 25%);
+			background-color: white;
+			padding: 1rem;
+			border-radius: 0.4rem;
+		}
+
+		.instructions code {
+			font-size: 0.875em;
+			font-weight: bold;
+			background: rgba(var(--accent), 12%);
+			color: rgb(var(--accent));
+			border-radius: 4px;
+			padding: 0.3em 0.45em;
+		}
+
+		.instructions strong {
+			color: rgb(var(--accent));
+		}
+
+		.link-card-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+			gap: 1rem;
+			padding: 0;
+		}
+
+		footer {
+			background-color: #343a40;
+			margin-top: 2rem;
+		}
+
+		footer p {
+			margin: 0.5rem 0;
+		}
+		footer a {
+			color: white;
+		}
+
+		footer ul.list-inline {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		footer ul.list-inline li {
+			display: inline-block;
+			margin-right: 0.5rem;
+		}
+
+		footer ul.list-inline li a {
+			color: #fff;
+			font-size: 1.5rem;
+		}
+	</style>

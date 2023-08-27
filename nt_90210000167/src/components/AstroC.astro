@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ders Çalışma Sitesi</title>
+    <!-- Bootstrap Grid CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap-grid.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(to bottom right, #4ecdc4, #556270);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+      }
+
+      .card {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        background-color: #2c3e50;
+        color: #ffffff;
+        border-radius: 10px 10px 0 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card-title {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      ..welcome-message {
+        margin-bottom: 20px;
+        color: #333333; /* Koyu renk */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .sample-text {
+        font-size: 18px;
+        color: #333333; /* Koyu renk */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: #2980b9;
+      }
+
+      .button-container a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #2980b9;
+        color: #ffffff;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 0 10px;
+        
+    
+      }
+
+      .button-container a:hover {
+        background-color: #1d6fa5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid p-5">
+      <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-6 col-sm-12">
+          <div class="card shadow-lg rounded-lg">
+            <div class="card-header">
+              <h4 class="card-title m-0">EVB STUDY ROOM</h4>
+            </div>
+            <div class="card-body text-center">
+              <div class="welcome-message">
+                <h2>Hoş Geldiniz</h2>
+                <p>Bu ders çalışmak için doğru yere geldiniz</p>
+              </div>
+              <div class="sample-text">
+                <p>Başlamadan önce Bilmeniz Gerekenleri Aşağıda Bulabilirsiniz</p>
+              </div>
+              <div class="button-container">
+                <a href="https://www.osym.gov.tr/TR,3903/sinav-hakkinda-bazi-bilgiler.html" target="_blank">Yönlendir</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and Astro -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="module" src="https://unpkg.com/@astrojs/core"></script>
+
+    <script type="module">
+      const astro = new Astro();
+
+      astro.component("my-component", () => {
+        return {
+          html: `
+            <div style="text-align: center;">
+              <h2>Hoş Geldiniz!</h2>
+              <p>Bu ders çalışma sitesinde kaynaklara erişebilirsiniz.</p>
+              <div class="button-container">
+                <a href="#">Site 1</a>
+                <a href="#">Site 2</a>
+                <a href="#">Site 3</a>
+              </div>
+            </div>
+          `,
+        };
+      });
+
+      astro.render(document.body);
+    </script>
+  </body>
+</html>

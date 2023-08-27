@@ -1,0 +1,58 @@
+<div class="container-fluid" style="background-image: linear-gradient(to bottom right, #4ecdc4, #556270);" x-data="averageCalculator()">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6 col-sm-12">
+      <div class="card shadow-lg rounded-lg">
+        <div class="card-header bg-light text-dark">
+          <h4 class="card-title m-0">Ortalama Hesaplayan Bileşen</h4>
+        </div>
+        <div class="card-body text-center">
+          <div class="mb-3">
+            <label class="form-label">Sayı Ekle</label>
+            <input class="form-control" type="number" x-model="newNumber">
+            <button class="btn btn-primary mt-2" @click="addNumber()">Ekle</button>
+          </div>
+          <h1 class="display-1 mb-4" x-text="average !== null ? average.toFixed(2) : '---'"></h1>
+          <ul class="list-group">
+            <template x-for="(number, index) in numbers" :key="index">
+              <li class="list-group-item" x-text="number"></li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Alpine from 'alpinejs';
+  setTimeout(() => {
+    Alpine.start();
+  }, 0);
+
+  function calculateAverage(numbers) {
+    const sum = numbers.reduce((total, num) => total + num, 0);
+    return sum / numbers.length;
+  }
+
+  function roundToTwoDecimals(num) {
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+  }
+
+  function averageCalculator() {
+    return {
+      numbers: [],
+      newNumber: null,
+      average: null,
+
+      addNumber() {
+        if (this.newNumber !== null && !isNaN(this.newNumber)) {
+          this.numbers.push(parseFloat(this.newNumber));
+          this.average = roundToTwoDecimals(calculateAverage(this.numbers));
+          this.newNumber = null;
+        }
+      },
+    };
+  }
+
+  Alpine.data('averageCalculator', averageCalculator);
+</script>
